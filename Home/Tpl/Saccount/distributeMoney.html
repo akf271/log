@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>增加额度_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+<script type="text/javascript" src="/Public/Js/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript" src="/Public/Js/jquery.form.js"></script>
+<script type="text/javascript" src="/Public/Js/common.js"></script>
+<script type="text/javascript" src="/Public/Js/Saccount/distributemoney.js"></script>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a href="/saccount/thelist"  >子账号管理</a> <span class="divider">/</span></li>
+        <li><a style="font-weight:bold" href="javascript:void(0);">增加额度</a></li> <!--<span class="divider">/</span></li>
+        <li class="active">Data</li>-->
+      </ul>
+    </div>
+    <div class="content">
+      <div class="blank40"></div>
+      <div class="alert alert-info"> <br />增加额度账号：{$memberInfo.username}<br />
+        <h2>账号余额：{$memberInfo.money}</h2></div>
+      <form class="form-horizontal" id="distributeMoneyForm">
+      <input type="hidden" name="shopid" value="{$shopid}" />
+           <div class="control-group">
+          <label class="control-label" for="inputmoney">可用分配额度：</label>
+          <div class="controls" style="margin-top:5px;">
+            <span style="margin-left:10px; color:#D9400B; font-size:14px;">{$userInfo.money}元</span>
+           </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputmoney">分配可代充额度：</label>
+          <div class="controls">
+            <input type="text"  name="money" id="inputmoney" placeholder="分配可代充额度" onkeyup="javascript: var myreg=/^[+]?(([1-9]\d*[.]?)|(0.))(\d{0,2})?$/;if(!myreg.test(this.value)){this.value=''; }; "> 元
+            <span class="help-inline help-inline2 " id="moneyTip"></span> </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">验证码： </label>
+          <div class="controls"> <img id="verifyImg" onclick="this.src='/public/logicverify/?id='+Math.random()*5;" src="/public/logicverify/" style="cursor:pointer;"><input style=" width:35px; margin-right:5px;" type="text" name="verify" id="inputmoney" placeholder=""><a id="changeVerify" href="javascript:void(0);">看不清换一张</a></div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <!--<label class="checkbox">
+              <input type="checkbox">
+              我已阅读并同意相关服务条款 </label>-->
+            <button type="button" id="distributeMoneyFormButton" class="btn">确定增加</button>
+          </div>
+        </div>
+      </form>
+      <div class="blank40"></div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>

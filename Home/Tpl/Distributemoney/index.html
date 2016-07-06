@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代充金额分配_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+<script type="text/javascript" src="/Public/Js/artDialog/artDialog.js?skin=blue"></script>
+<script src="/Public/Js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/Public/Js/common.js"></script>
+<script type="text/javascript" src="/Public/Js/Distributemoney/index.js"></script>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a href="/distributemoney"  style="font-weight:bold">代充金额分配</a> <!--<span class="divider">/</span>--></li>
+        <!-- <li><a href="#">Library</a> <span class="divider">/</span></li>
+        <li class="active">Data</li>-->
+      </ul>
+    </div>
+    <div class="content">
+    <div class="alert alert-info"> <br />
+      <h2>账户可用余额：{$userInfo.money}元</h2><br />
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="h20">分店名称</th>
+            <th class="h20">用户名</th>
+            <th class="h20">负责人</th>
+            <th class="h20">电话</th>
+            <th class="h20">可用代充额度</th>
+            <th class="h20">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+                 <volist name="memberInfo" id="data">
+                    <tr>
+            <td>{$rootShopName}-{$data.shop_name}</td>
+            <td>{$data.username}</td>
+            <td>{$data.shop_manager}</td>
+            <td>{$data.shop_telephone}</td>
+            <td>{$data.money}</a> </td>
+            <if condition="($data.status eq 0)"><td><a href="/distributemoney/distributemoney/shopid/{$data.userid}" >增加额度</a>&nbsp;|&nbsp;<a href="/distributemoney/reducebshopmoney/shopid/{$data.userid}" >减少额度</a> </td><else /><td>冻结 | <a href="javascript:void(0);" id="startUseUser" shopid="{$data.userid}">启用</a></td></if>
+            
+             </td>
+          </tr>
+	  </volist>
+        </tbody>
+      </table>
+     <div class="blank40"></div>
+<div class="pagination pagination-centered ">
+  <ul>
+    {$page}
+  </ul>
+</div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代充金额分配记录_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+<script type="text/javascript" src="/Public/Js/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript" src="/Public/Js/jquery.form.js"></script>
+<script type="text/javascript" src="/Public/Js/common.js"></script>
+<script type="text/javascript" src="/Public/Js/Distributemoney/detail.js"></script>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a href="#"  style="font-weight:bold">代充金额分配记录</a> <!--<span class="divider">/</span>--></li>
+<div style="position:absolute; right:80px; top:160px"><!--<a  type="submit" href="#myModal" role="button" class="btn" data-toggle="modal"> 导出账单</a>--> </div>
+      </ul>
+     
+    </div>
+    <div class="content">
+      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="h20">分配时间</th>
+            <th class="h20">类型</th>
+            <th class="h20">分配金额</th>
+            <th class="h20">分店名称</th>
+            <th class="h20">用户名</th>
+            <th class="h20">负责人</th>
+            <th class="h20">电话</th>
+          </tr>
+        </thead>
+        <tbody>
+             <volist name="moneyDistributeDetailInfo" id="data">
+                    <tr>
+            <td>{$data.time}</td>
+            <td>{$data.distributeType}</td>
+            <td><if condition="($data.distribute_type eq 2)">-<else /> </if>{$data.money}</td>
+            <td>{$data.shop_name}</td>
+            <td>{$data.username}</td>
+            <td>{$data.shop_manager}</td>
+            <td>{$data.shop_telephone}</td>
+          </tr>
+	  </volist>
+        </tbody>
+      </table>
+      <div class="blank40"></div>
+      <div class="pagination pagination-centered ">
+        <ul>
+          {$page}
+        </ul>
+      </div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>

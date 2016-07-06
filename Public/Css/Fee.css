@@ -1,0 +1,79 @@
+.divGlobal {
+	min-width: 760px;
+width: expression(document.body.clientWidth < 760? "760px": "97%" )/*最小宽度设置*/;
+	width: 100%;
+	overflow: hidden;
+	margin: 0px;
+	background: #c4c4c4;
+	-moz-box-shadow: 0px 0px 5px 0px #5f5f5f;
+	-webkit-box-shadow: 0px 0px 5px 0px #5f5f5f;
+	box-shadow: 0px 0px 5px 0px #5f5f5f;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#e8e8e8')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#e8e8e8');
+}
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td { margin: 0; padding: 0; }
+img { border: 0 none; vertical-align: top; }
+ul, li { list-style:none;padding:0;margin:0;}
+h1, h2, h3, h4, h5, h6 { font-size: 14px; }
+body, input, select, button, textarea { font-size: 14px; font-family: "微软雅黑", "宋体"; Tahoma, Geneva, sans-serif; }
+button { cursor: pointer; }
+i, em, cite { font-style: normal; }
+body {line-height: 1.2;color:#666; }
+a, a:link { color:; text-decoration: none; }
+a:hover{ color:}
+a:visited {  }
+a:active, a:hover { text-decoration: none; }
+a:focus {outline: none;}
+body{ background:url(/Public/Images/bg.png) repeat-x;}
+/*鼠标选中效果*/
+::selection {background: #37a0d3;text-shadow: none;}
+
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+.fB { font-weight:bold; }
+input, a, textarea { outline: none; }
+img,input,select,textarea{vertical-align:middle;}
+textarea { resize:vertical; }
+em { font-style:normal; }
+table { border-collapse:collapse; }
+/*空白*/
+.blank20{width:100%; height:20px;clear:both; overflow:hidden;}
+.blank10{width:100%; height:10px;clear:both; overflow:hidden;}
+.blank40{width:100%; height:40px;clear:both; overflow:hidden;}
+
+.float_l{ float:left}
+.float_r{ float:right}
+
+/*字号*/
+
+.f12px{font-size:12px; }
+.color{ color:#666;}
+
+.divGlobal {}
+.DivTop, .DivBottom, .DivMainLeft, .DivMainRight {}
+.DivBottom {clear: both;}
+.DivMainLeft {float: left;display: inline;margin-bottom: 50px; background:#242d2f;}
+.DivMainRight {border:#ffffff 1px solid; background:#fff; margin:0 0 0 240px; box-shadow: 0 0 5px 0 #5F5F5F;}
+.DivFiexWidth {width: 240px;}
+.DivFiexWidth .title{ height:35px; line-height:35px; padding-left:40px;}
+.header{ height:120px}
+.header_top{ height:30px; background:#056087; border-bottom:1px solid #044b6a}
+.header_top_txt{ float:right; width:300px; text-align:right; margin-right:30px;}
+.header_top_txt li{height:30px;  line-height:30px; float:left; margin-right:10px; color:#a2aeb6;}
+.header_top_txt li a{ color:#f2f5f6;}
+.header_bg{ background:url(/Public/Images/top_bg.jpg); height:59px;}
+
+.m_l_20{ margin-left:20px; display:inline;}
+.m_t_20{ margin-top:20px;}
+.m_r_20{ margin-right:20px;}
+.h80{ height:80px; font-size:18px;}
+.content{margin: 0 0 20px; padding: 8px 35px; float:left; width:90%}
+.content .h20{ line-height:20px; color:#3a4140;}
+.content .table .dropdown a{ color:#333;}
+
+.content .control-group .remind a{ color:#D9400B}
+.content .control-group .remind a:hover{ color:#bf370a}

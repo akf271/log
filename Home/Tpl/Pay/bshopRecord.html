@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>分店充值记录_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a href="/pay">充值</a> <span class="divider">/</span></li>
+        <li><a style="font-weight:bold" href="/pay/bshoprecord">分店充值记录</a> <!--<span class="divider">/</span></li>
+        <li class="active">Data</li>-->
+      </ul>
+      <div style="position:absolute; right:80px; top:160px"><!--<a  type="submit" href="#myModal" role="button" class="btn" data-toggle="modal"> 导出账单</a>--> </div>
+    </div>
+    <div class="content">
+        <!--<div class="" style=" width:100%; height:30px; margin-bottom:10px;">这里是日期选择</div>-->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="h20">交易流水号</th>
+            <th class="h20">充值时间</th>
+            <th class="h20"><div class="dropdown"> <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"> 分店名称 <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="overflow:scroll; height:200px;">               
+                    <volist name="bshopArr" id="bshopArrData">
+      					<li><a href="/pay/bshoprecord/id/{$bshopArrData.userid}">{$bshopArrData.shop_name}</a></li>
+          			</volist>
+              </ul>
+            </div></th>
+            <th class="h20">充值渠道</th>
+            <th class="h20">充值金额</th>
+            <th class="h20">状态</th>
+          </tr>
+        </thead>
+        <tbody>
+         <volist name="payInfo" id="data">
+           <tr>
+            <td>{$data.order_id}</td>
+            <td>{$data.pay_start_time}</td>
+            <td><a href="#" style="color:#d9400b;">{$data.bshopName}</a></td>
+            <td>{$data.pay_from}</td>
+            <td>{$data.money}</td>
+            <td><span>{$data.pay_status}</span><!--<span>处理中</span><span>取消</span>--></td>
+          </tr>
+          </volist>
+        </tbody>
+      </table>
+      <div class="blank40"></div>
+      <div class="pagination pagination-centered ">
+        <ul>
+          {$page}
+        </ul>
+      </div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>

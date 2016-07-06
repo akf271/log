@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>充值_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+<script type="text/javascript" src="/Public/Js/jquery.form.js"></script>
+<script type="text/javascript" src="/Public/Js/common.js"></script>
+<script type="text/javascript" src="/Public/Js/Pay/index.js"></script>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a style="font-weight:bold" href="/pay">充值</a> </li>
+
+      </ul>
+    </div>
+    <div class="content">
+      <div class="blank40"></div>
+      <div class="alert alert-info"> <br />
+        充值账号：{$userInfo.username}<br />
+        <h2>账号余额：{$userInfo.money}</h2>
+      </div>
+      <form class="form-horizontal"  method="post" action = "" id="payForm" target=" ">
+        <div class="control-group">
+          <label class="control-label" for="inputmoney">充值金额：</label>
+          <div class="controls">
+            <input type="text" name="money" id="inputmoney" placeholder="充值金额" onkeyup="javascript: var myreg=/^[+]?(([1-9]\d*[.]?)|(0.))(\d{0,2})?$/;if(!myreg.test(this.value)){this.value=''; }; " >&nbsp;&nbsp;元
+            <!--<span class="help-inline help-inline2 ">出错提示</span>--> </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputmoney">充值渠道：</label>
+          <div class="controls">
+           <label class="checkbox inline">
+  <!--<input type="checkbox" id="inlineCheckbox1" value="option1" checked="checked">--><img id="alipayLogo" src="/Public/Images/logo-alipay_active.png" width="125" height="41" />
+</label>
+ <label class="checkbox inline">
+  <!--<input type="checkbox" id="inlineCheckbox1" value="option1" checked="checked">--><img id="chinapayLogo" src="/Public/Images/Chinapay_logo.png" width="125" height="41" />
+</label>
+          </div>
+        </div>
+        <div class="control-group">
+    <label class="control-label" for="inputEmail"> </label>
+    <!--
+    <div class="controls">
+      <a  href="#" >+添加银行卡</a>
+      
+    </div>-->
+  </div>
+ 
+        <div class="control-group">
+          <div class="controls">
+          <!--
+            <label class="checkbox">
+              <input type="checkbox">
+              我已阅读并同意相关服务条款 </label>-->
+              <input type="hidden" name="doSubmit" value="doSubmit" />
+            <button type="button" id="paySubmit" class="btn">充&nbsp;&nbsp;值</button>
+          </div>
+        </div>
+      </form>
+      
+      <div class="blank40"></div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>

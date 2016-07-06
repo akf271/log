@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>充话费_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+<script type="text/javascript" src="/Public/Js/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript" src="/Public/Js/jquery.form.js"></script>
+<script type="text/javascript" src="/Public/Js/common.js"></script>
+<script type="text/javascript" src="/Public/Js/Consume/index.js"></script>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a style="font-weight:bold" href="/consume">充话费</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="blank40"></div>
+      <div class="alert alert-info">
+        <h2>账号余额：{$userInfo.money}</h2>
+      </div>
+      <form id="doConsumeForm" class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="phoneMoney">话费：</label>
+          <div class="controls">
+            <input type="text" id="phoneMoney" name="phoneMoney" placeholder="充话费金额" onkeyup="javascript: var myreg=/^[+]?([1-9]\d*?)$/;if(!myreg.test(this.value)){this.value=''; }; ">
+            <span class="help-inline" id="phoneGetRate"><!--实际到账金额：300.00--></span> </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">手续费： </label>
+          <div class="controls" style="line-height:30px;"><span id="costRate"><!--4.00--></span> <a  href="javascript:void(0);" >收费标准</a> </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="phone">充值手机号码：</label>
+          <div class="controls">
+            <input type="text" id="phone" name="phone" placeholder="充值手机号码">
+            <span class="help-inline help-inline2 " id="phoneTip"></span> </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="phoneConfirm">确认充值手机号码：</label>
+          <div class="controls">
+            <input type="text" name="phoneConfirm" id="phoneConfirm" placeholder="确认充值手机号码">
+            <span class="help-inline help-inline2 " id="phoneConfirmTip"></span> </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="verify">验证码： </label>
+          <div class="controls"> <img id="verifyImg" style="cursor:pointer;"  src="/public/logicverify/" onclick="this.src='/public/logicverify/?id='+Math.random()*5;" />
+            <input style=" width:35px; margin-right:5px;" type="text" id="verify" name="verify" placeholder="">
+            <a id="changeVerify" href="javascript:void(0);">看不清换一张</a></div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <!--<label class="checkbox">
+              <input type="checkbox">
+              我已阅读并同意相关服务条款 </label>-->
+            <button type="button" id="doConsumeFormButton" class="btn">确定</button>
+          </div>
+        </div>
+      </form>
+      <div class="blank40"></div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>

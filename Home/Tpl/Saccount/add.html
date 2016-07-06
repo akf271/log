@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加子账号_远景代充话费系统</title>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-responsive.css"/>
+<script type="text/javascript" src="/Public/Js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/Public/Js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/Css/bootstrap-ie6.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/ie.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/Css/Fee.css"/>
+<script type="text/javascript" src="/Public/Js/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript" src="/Public/Js/jquery.form.js"></script>
+<script type="text/javascript" src="/Public/Js/common.js"></script>
+<script type="text/javascript" src="/Public/Js/Saccount/add.js"></script>
+</head>
+
+<body style="background:#c4c4c4;">
+<include file="Common:head" />
+<div class="divGlobal margin">
+  <include file="Common:left" />
+  <div class="DivMainRight">
+    <div class="h80">
+      <ul class="breadcrumb ">
+        <li class="blank40"></li>
+        <li><a href="/saccount/thelist">子账号管理</a> <span class="divider">/</span></li>
+        <li><a style="font-weight:bold" href="/saccount/add">添加子账号</a></li> <!--<span class="divider">/</span>--></li>
+        <!-- <li><a href="#">Library</a> <span class="divider">/</span></li>
+        <li class="active">Data</li>-->
+      </ul>
+    </div>
+    <div class="content">
+    <div class="blank40"></div>
+      <form class="form-horizontal" id="addForm">
+      <input type="hidden" name="phoneId" id="phoneId" value="1" />
+  <div class="control-group">
+    <label class="control-label" for="inputUserName">用户名：</label>
+    <div class="controls">
+      <input type="text" id="inputUserName" placeholder="用户名" name="username"><span class="help-inline help-inline2 " id="usernameTip"></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">密码：</label>
+    <div class="controls">
+      <input type="password" id="inputPassword" placeholder="密码" name="password"><span class="help-inline help-inline2 " id="passwordTip"></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputpasswordConfirm">确认密码：</label>
+    <div class="controls">
+      <input type="password" id="inputpasswordConfirm" placeholder="密码" name="passwordConfirm"><span class="help-inline help-inline2 " id="passwordConfirmTip"></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="shopName">分店名称：</label>
+    <div class="controls">
+      <input type="text" id="shopName" placeholder="分店名称" name="shopName"><span class="help-inline help-inline2 " id="shopNameTip"></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="shopTelephone">电话：</label>
+    <div class="controls">
+      <input type="text" id="shopTelephone" placeholder="电话" name="shopTelephone"><span class="help-inline help-inline2 " id="shopTelephoneTip"></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="shopManager">负责人：</label>
+    <div class="controls">
+      <input type="text" id="shopManager" name="shopManager" placeholder="负责人" ><!--<span class="remind" style="margin-left:20px; color:#D9400B"><a href="">[删除]</a></span>--><span class="help-inline help-inline2 " id="shopManagerTip"></span>
+    </div>
+  </div>
+  
+  <div class="control-group">
+  	<div   style="border-top:#CCC 1px dashed; width:500px; height:10px;"></div>
+    <label class="control-label" for="phone1">手机号码：</label>
+    <div class="controls"><input type="text" id="phone1" name="phone1" placeholder="手机号码" /></div>
+   
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="phone1Mark">备注：</label>
+    <div class="controls">
+      <input type="text2" id="phone1Mark" name="phone1Mark" placeholder="请填写号码所属人，如：张三">
+    </div>
+     <div></div>
+  </div>
+  
+    <div id="addPhoneDiv" class="control-group">
+    <label class="control-label" for="inputEmail"> </label>
+    <div class="controls">
+      <a id="addPhone"  href="javascript:void(0);" >+新增手机号码</a>
+      
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="money">分配可代充额度：</label>
+    <div class="controls">
+      <input type="money" id="money" placeholder="分配可代充额度" onkeyup="javascript: var myreg=/^[+]?(([1-9]\d*[.]?)|(0.))(\d{0,2})?$/;if(!myreg.test(this.value)){this.value=''; }; " name="money"><span class="help-inline help-inline2 " id="moneyTip"></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <!--<label class="checkbox">
+        <input type="checkbox">  我已阅读并同意相关服务条款
+      </label>-->
+      <button type="button" id="addFormButton" class="btn">添加</button>
+    </div>
+  </div>
+  
+</form>
+     <div class="blank40"></div>
+
+    </div>
+    <div class="blank10"></div>
+  </div>
+</div>
+</body>
+</html>
