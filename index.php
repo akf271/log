@@ -1,4 +1,5 @@
 <?php
+    exit("第一个github项目");
 	//定义项目名称
     define('APP_NAME', 'YJDC');
     //定义项目路径
